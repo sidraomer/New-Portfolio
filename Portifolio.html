@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="icon" type="image/png" href="main2.webp" style="border-radius: 50%;">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      background: transparent;
+      color: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: red;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: red;
+    }
+
+    .home {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .profile img {
+      width: 350px;
+      height: 350px;
+      border-radius: 12px;
+      margin-right: 2rem;
+    }
+
+    .intro h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro span {
+      color: red;
+    }
+
+    .intro h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .social-icons a {
+      margin-right: 1rem;
+      font-size: 1.5rem;
+      color: #fff;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: red;
+    }
+
+    .hire-btn {
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .hire-btn:hover {
+      background: darkred;
+    }
+
+    .services {
+      padding: 50px;
+      text-align: center;
+      background-color: red;
+    }
+
+
+    .website{
+      color: red;
+    }
+
+    .features, .plans {
+      padding: 50px;
+      text-align: center;
+      background-color: #111;
+    }
+
+    .features h2, .plans h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: red;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background: #222;
+      border: 1px solid #444;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #ddd;
+    }
+
+    .card a {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    .plan {
+      border: 1px solid red;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+    }
+
+    .plan h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+
+    .plan .price {
+      font-size: 2rem;
+      color: red;
+      margin-bottom: 15px;
+    }
+
+    .plan ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    .plan ul li {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .plan button {
+      background: red;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .plan button:hover {
+      background: darkred;
+    }
+
+    .services h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    
+
+    .services .service-item {
+      margin: 20px 0;
+      font-size: 1.5rem;
+    }
+
+    
+
+    .contact-form {
+      padding: 50px;
+      background-color: #222;
+      color: white;
+      text-align: center;
+    }
+
+    .contact-form h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .contact-form form {
+      max-width: 400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form input, .contact-form textarea {
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .contact-form button {
+      padding: 10px;
+      font-size: 1.2rem;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: darkred;
+    }
+
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: red;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Mohammad</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <section id="home" class="home">
+    <div class="profile">
+      <img src="main2.webp" alt="Alex">
+    </div>
+    <div class="intro">
+      <h1>Hi, It's <span>Mohammad</span></h1>
+      <h2>I'm a <span class="typing-text"></span></h2>
+      <p>Mohammad, a skilled <span class="website"> web developer</span>, creates innovative and user-friendly websites.</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <button class="hire-btn">Hire Me</button>
+    </div>
+  </section>
+  <section id="features" class="features">
+    <h2>Our Features</h2>
+    <div class="card-container">
+      <div class="card">
+        <i class="fa-solid fa-book"></i>
+        <h3>Free Tutorials</h3>
+        <p>Access free tutorials to enhance your coding skills.</p>
+        <a href="#">Join Now &rarr;</a>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-wrench"></i>
+        <h3>Fix Your Bugs</h3>
+        <p>Get help fixing issues in your code with expert advice.</p>
+        <a href="#">Join Now &rarr;</a>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-clock"></i>
+        <h3>On Time Videos</h3>
+        <p>Regular video uploads to keep your learning on track.</p>
+        <a href="#">Join Now &rarr;</a>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-handshake"></i>
+        <h3>Cooperation</h3>
+        <p>Collaborate with us for mutual growth and success.</p>
+        <a href="#">Join Now &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans" class="plans">
+    <h2>Our Plans</h2>
+    <div class="card-container">
+      <div class="plan">
+        <h3>Basic Plan</h3>
+        <div class="price">$10</div>
+        <ul>
+          <li>Smart coding plan</li>
+          <li>At home workouts</li>
+        </ul>
+        <button>Join Now</button>
+      </div>
+      <div class="plan">
+        <h3>Gold Plan</h3>
+        <div class="price">$50</div>
+        <ul>
+          <li>Pro codes</li>
+          <li>Smart coding plan</li>
+          <li>At home workouts</li>
+        </ul>
+        <button>Join Now</button>
+      </div>
+      <div class="plan">
+        <h3>Diamond Plan</h3>
+        <div class="price">$100</div>
+        <ul>
+          <li>Elite classes & courses</li>
+          <li>Pro codes</li>
+          <li>Personal coaching</li>
+          <li>Smart coding plan</li>
+          <li>At home workouts</li>
+        </ul>
+        <button>Join Now</button>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="services" class="services">
+    <h2>Services</h2>
+    <div class="service-item">Web Design</div>
+    <div class="service-item">Artist</div>
+    <div class="service-item">Web Developer</div>
+    <div class="service-item">Video Editing</div>
+  </section>
+
+  <section id="contact" class="contact-form">
+    <h2>Contact Me</h2>
+    <form action="#" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Alex's Portfolio</p>
+  </footer>
+
+  <script>
+    const roles = ["Artist", "Developer", "Web Designer", "Script Writer"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    const typingText = document.querySelector(".typing-text");
+
+    function type() {
+      if (charIndex < roles[roleIndex].length) {
+        typingText.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(type, 150);
+      } else {
+        setTimeout(erase, 1000);
+      }
+    }
+
+    function erase() {
+      if (charIndex > 0) {
+        typingText.textContent = roles[roleIndex].substring(0, charIndex - 1);
+        charIndex--;
+        setTimeout(erase, 100);
+      } else {
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(type, 500);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      type();
+    });
+  </script>
+</body>
+</html>
